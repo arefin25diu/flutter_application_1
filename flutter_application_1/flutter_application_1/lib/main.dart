@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Premium Shoe - Mart'),
+          title: const Text('Premium Shoes-Mart'),
           actions: [
             Stack(
               children: [
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Center(
           child: Container(
-            width: 400,
+            width: 200,
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -71,28 +71,68 @@ class MyApp extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Image(
-                  image: NetworkImage('https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/002d0e35-1e28-4a1c-935e-adaf76437474/PHANTOM+GX+II+ACADEMY+FG%2FMG+EH.png'),
-                  fit: BoxFit.cover,
-                  height: 150,
-                  width: double.infinity,
+              children: [
+                Stack(
+                  children: [
+                    const Image(
+                      image: NetworkImage(
+                          'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/002d0e35-1e28-4a1c-935e-adaf76437474/PHANTOM+GX+II+ACADEMY+FG%2FMG+EH.png'),
+                      fit: BoxFit.cover,
+                      height: 150,
+                      width: double.infinity,
+                    ),
+                    Positioned(
+                      top: 10,
+                      left: 10,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: const Text(
+                          '50% OFF',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                SizedBox(height: 10),
-                Text(
+                const SizedBox(height: 10),
+                const Text(
                   'Nike Phantom GX II Academy',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 5),
-                Text(
+                const SizedBox(height: 5),
+                const Text(
                   '\$120.00',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: const Text(
+                      'Add to Cart',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ],
