@@ -22,9 +22,7 @@ class FirstUI extends StatelessWidget {
               const Text(
                 "4.0",
                 style: TextStyle(
-                    color: Color.fromARGB(255, 50, 46, 46), 
-                    fontSize: 30
-                    ),
+                    color: Color.fromARGB(255, 50, 46, 46), fontSize: 30),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
